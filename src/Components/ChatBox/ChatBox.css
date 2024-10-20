@@ -1,0 +1,218 @@
+.chat-box-container {
+    height: 75vh;
+    position: relative;
+    background: #f1f5ff;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    .chat-user {
+        padding: 10px 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-bottom: 1px solid #c6c6c6;
+
+        .back-button {
+            display: none;
+            padding: 10px 16px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            position: absolute;
+            right: 15px;
+
+            &:hover {
+                transform: scale(1.05);
+                transition: 0.4s;
+            }
+        }
+
+        img {
+            width: 25px;
+            border-radius: 50%;
+        }
+
+        img:first-child {
+            width: 38px;
+            aspect-ratio: 1/1;
+        }
+
+        p {
+            flex: 1;
+            font-weight: 500;
+            font-size: 20px;
+            color: #393939;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    }
+
+    .chat-message {
+        height: calc(100% - 70px);
+        padding-bottom: 50px;
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column-reverse;
+
+        .sender-message div img,
+        .receiver-message div img {
+            width: 27px;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+        }
+
+        .sender-message,
+        .receiver-message {
+            display: flex;
+            align-items: end;
+            justify-content: end;
+            gap: 5px;
+            padding: 0 15px;
+
+            .message {
+                color: white;
+                background-color: #077EFF;
+                padding: 8px;
+                max-width: 200px;
+                font-size: 11px;
+                font-weight: 300;
+                border-radius: 8px 8px 0px 8px;
+                margin-bottom: 30px;
+            }
+
+            div {
+                text-align: center;
+                font-size: 10px;
+            }
+        }
+
+        .sender-message .message-image {
+            max-width: 230px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+
+        .receiver-message {
+            flex-direction: row-reverse;
+            justify-content: start;
+
+            .message {
+                border-radius: 8px 8px 8px 0;
+                background-color: rgb(87, 223, 87);
+            }
+        }
+
+        .receiver-message .message-image {
+            max-width: 230px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+    }
+
+    .chat-input {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 15px;
+        background: white;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        input {
+            flex: 1;
+            border: none;
+            outline: none;
+        }
+
+        img {
+            width: 30px;
+            cursor: pointer;
+        }
+
+        label {
+            display: flex;
+
+            img {
+                width: 22px;
+            }
+        }
+    }
+}
+
+.chat-welcome {
+    /* border: 2px solid red; */
+    height: 100%;
+    /* Take full height of container */
+    width: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    img {
+        width: 60px;
+    }
+
+    p {
+        font-size: 20px;
+        font-weight: 500;
+        color: #383838;
+    }
+}
+
+
+@media (max-width: 900px) {
+    .chat-box-container {
+        height: 100vh;
+    }
+
+    .chat-user {
+        width: 100%;
+        position: sticky;
+        top: 0;
+        background: #fff;
+        z-index: 2;
+
+        .back-button {
+            display: flex !important;
+            padding: 10px 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            position: absolute;
+            right: 15px;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+
+    }
+
+    .chat-box.visible {
+        left: 0;
+    }
+
+    .back-button {
+        display: flex;
+        padding: 10px;
+        background: none;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+
+}

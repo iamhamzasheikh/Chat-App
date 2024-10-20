@@ -1,0 +1,167 @@
+.left-side {
+    background: #001030;
+    color: white;
+    height: 75vh;
+
+    .left-side-top {
+        padding: 20px;
+
+        .left-side-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .logo {
+                max-width: 140px;
+            }
+
+            .menu {
+                position: relative;
+                padding: 10px 0;
+
+                img {
+                    max-height: 20px;
+                    opacity: 0.6;
+                    cursor: pointer;
+
+                }
+
+                .sub-menu {
+                    position: absolute;
+                    top: 100%;
+                    right: 0;
+                    width: 130px;
+                    padding: 20px;
+                    border-radius: 5px;
+                    background-color: white;
+                    color: black;
+                    display: none;
+
+                    hr {
+                        border: none;
+                        height: 1px;
+                        background: #a4a4a4;
+                        margin: 8px 0;
+                    }
+
+                    p {
+                        cursor: pointer;
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            .menu:hover .sub-menu {
+                display: block;
+            }
+        }
+
+        .left-side-search {
+            background-color: #002670;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 12px;
+            margin-top: 20px;
+
+            img {
+                width: 16px;
+            }
+
+            input {
+                background: transparent;
+                border: none;
+                outline: none;
+                color: white;
+                font-size: 11px;
+            }
+
+            input::placeholder {
+                color: #C8C8C8;
+            }
+        }
+    }
+
+    .left-side-list {
+        display: flex;
+        flex-direction: column;
+        height: 70%;
+        overflow-y: scroll;
+
+        .friends {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 10px 20px;
+          cursor: pointer;
+          font-size: 13px;
+          transition: background-color 0.3s ease;
+        }
+        
+        .friends img {
+          width: 35px;
+          aspect-ratio: 1/1;
+          border-radius: 50%;
+        }
+        
+        .friends div {
+          display: flex;
+          flex-direction: column;
+        }
+        
+        .friends div span.last-msg {
+          color: #9f9f9f;
+          font-size: 14px;
+          transition: color 0.3s ease;
+        }
+        
+        .friends div span.last-msg.new-message-text {
+          color: skyblue; /* Changed from red to skyblue as per our earlier discussion */
+          font-weight: bold;
+        }
+        
+        .friends:hover {
+          background-color: #077EFF;
+        }
+        
+        .friends:hover span.last-msg {
+          color: white;
+        }
+        
+        .friends.new-message {
+          background-color: rgba(135, 206, 235, 0.1); /* Changed to a light sky blue tint */
+        }
+        
+        .friends.new-message p {
+          color: skyblue; /* Added to make the name sky blue for new messages */
+          font-weight: bold;
+        }
+        
+        .friends.new-message:hover {
+          background-color: #077EFF;
+        }
+        
+        .friends.new-message:hover p,
+        .friends.new-message:hover span.last-msg {
+          color: white;
+        }
+
+
+    }
+}
+
+@media (max-width: 900px) {
+  .left-side {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+  }
+
+  .left-side.hidden {
+    display: none;
+  }
+}
+
